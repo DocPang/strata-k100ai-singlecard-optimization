@@ -1,0 +1,6 @@
+{
+  "_comment": "这是 config 的 env 段应新增的内容示例；deploy.sh 会用 python 幂等写入，无需手工编辑。",
+  "env": {
+    "STRATA_GEMM_SOL": "2560x6144=20377,10240x2560=20385"
+  }
+}

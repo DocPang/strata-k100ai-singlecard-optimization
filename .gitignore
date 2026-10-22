@@ -1,0 +1,7 @@
+*.bak
+*.bak_*
+*.tmp-*
+backups/
+logs/
+*.logits.*
+*.log
