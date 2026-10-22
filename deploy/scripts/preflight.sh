@@ -31,5 +31,9 @@ for d in renderD128 renderD129; do
 done
 
 log "=== 部署锁 ==="
-if [ -e "$B/.deploy.lock" ]; then log "  发现锁文件（可能上次中断）: $B/.deploy.lock"; else log "  无锁"; fi
+if [ -e "$B/.deploy.lock" ] && ! flock -n "$B/.deploy.lock" true 2>/dev/null; then
+  log "  锁当前被持有（另有部署在进行）"
+else
+  log "  无人持锁"
+fi
 log "自检完成（未做任何修改）"
